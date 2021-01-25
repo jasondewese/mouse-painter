@@ -1,3 +1,57 @@
 body {
+    color: #FFF;
     background-color: #000;
+}
+
+#mainContainer {
+    background-color: #B88;
+    
+
+    display: grid;
+
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 3fr 2fr 1fr;
+
+    grid-template-areas: 
+    ". heading ."
+    ". newGrid ."
+    "options gridArea ."
+    ". . ."
+    "footer footer footer";
+    
+}
+
+#heading {
+    background-color: #88B;
+    font-size: x-large;
+    text-align: center;
+
+    grid-area: heading;
+}
+
+#newGrid {
+    display: flex;
+    background-color: #8B8;
+    justify-content: center;
+    grid-area: newGrid;
+}
+
+#options {
+    background-color: #BB8;
+    grid-area: options;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+#gridArea {
+    background-color: #555;
+
+    grid-area: gridArea;
+}
+
+footer {
+    background-color: cadetblue;
+    text-align: center;
+    grid-area: footer;
 }
