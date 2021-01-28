@@ -5,12 +5,17 @@
 *
 */
 const MAX_GRID_SIZE = 100;
+const INITIAL_SIZE = 16;
 const gridArea = document.querySelector("#gridArea");
 const newGrid = document.querySelector("#pickSize");
-
+const blackBtn = document.querySelector("#blackBtn");
+const randomColor = document.querySelector("#randomColor");
+const pickColor = document.querySelector("#pickColor");
+const eraser = document.querySelector("#eraser");
+const rainbow = document.querySelector("#rainbow");
 
 //Initialize with a 16x16 grid
-drawGrid(16);
+drawGrid(INITIAL_SIZE);
 
 
 //user defined grid size
@@ -25,6 +30,41 @@ newGrid.addEventListener("click", function(){
     else{
         alert("Error. Please enter a number between 1 and 100 for size.");
     }
+    
+});
+
+//add white paint effect when 'eraser' clicked
+eraser.addEventListener("click", function(){
+    const tempDivs = document.querySelectorAll(".temp");
+    paint(tempDivs, "white");
+    
+});
+
+//allow user to pick a color to draw with
+pickColor.addEventListener("click", function(){
+    let colorChoice = window.prompt("What color would you like to draw with?" );
+    
+    const tempDivs = document.querySelectorAll(".temp");
+    paint(tempDivs, colorChoice);
+    
+});
+
+//draw when randomly generated rgb value
+randomColor.addEventListener("click", function(){
+    let r = getRandomInt(0,255);
+    let g = getRandomInt(0,255);
+    let b = getRandomInt(0,255);
+    
+    const tempDivs = document.querySelectorAll(".temp");
+    paint(tempDivs, "rgb("+r+","+g+","+b+")");
+    
+});
+
+//each div in gridArea gets a different random color
+rainbow.addEventListener("click", function(){
+    
+    const tempDivs = document.querySelectorAll(".temp");
+    rainbowPaint(tempDivs);
     
 });
 
@@ -61,19 +101,37 @@ function drawGrid(size)
 }
 
 
+
+
 //Allows the mouse to draw in the grid
-//nodeList {nodeList} - this nodeList of all divs in gridArea
+//nodeList {nodeList} - nodeList of all divs in gridArea
 //color {string} - the color you wish the mouse to draw in
 function paint(nodeList, color)
 {
     for (let i = 0; i < nodeList.length; i++)
     {    
-        //nodeList[i].style.backgroundColor = color;
-        
+        //give each div a mouseover draw effect
         nodeList[i].addEventListener('mouseover', function(){
             this.style.backgroundColor = color;
         });
         
+    }
+}
+
+//Allows the mouse to draw in the grid with each square as 
+//a different random color
+//nodeList {nodeList} - nodelist of all divs in gridArea
+function rainbowPaint(nodeList)
+{
+    for (let i = 0; i < nodeList.length; i++)
+    {    
+        let r = getRandomInt(0,255);
+        let g = getRandomInt(0,255);
+        let b = getRandomInt(0,255);
+    
+        nodeList[i].addEventListener('mouseover', function(){
+            this.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+        });
     }
 }
 
@@ -85,3 +143,11 @@ function deleteGrid()
         gridArea.removeChild(gridArea.firstChild);
     }
 }
+
+
+//return {integer} - random value between min and max
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+  }
