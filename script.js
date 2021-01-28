@@ -51,8 +51,29 @@ function drawGrid(size)
         div.style.borderStyle = "solid";
         div.style.borderColor = 'black';
         div.style.borderWidth = '1px';
-        
+        div.setAttribute('class', 'temp');
         gridArea.appendChild(div);
+    }
+    
+    const tempDivs = document.querySelectorAll(".temp");
+    paint(tempDivs, "black");
+    
+}
+
+
+//Allows the mouse to draw in the grid
+//nodeList {nodeList} - this nodeList of all divs in gridArea
+//color {string} - the color you wish the mouse to draw in
+function paint(nodeList, color)
+{
+    for (let i = 0; i < nodeList.length; i++)
+    {    
+        //nodeList[i].style.backgroundColor = color;
+        
+        nodeList[i].addEventListener('mouseover', function(){
+            this.style.backgroundColor = color;
+        });
+        
     }
 }
 
