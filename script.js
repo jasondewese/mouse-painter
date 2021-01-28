@@ -34,6 +34,13 @@ newGrid.addEventListener("click", function(){
 });
 
 //add white paint effect when 'eraser' clicked
+blackBtn.addEventListener("click", function(){
+    const tempDivs = document.querySelectorAll(".temp");
+    paint(tempDivs, "black");
+    
+});
+
+//add white paint effect when 'eraser' clicked
 eraser.addEventListener("click", function(){
     const tempDivs = document.querySelectorAll(".temp");
     paint(tempDivs, "white");

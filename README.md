@@ -4,8 +4,10 @@ A mouse-drawing web version of an etch-a-sketch. Part of The Odin Project curric
 Things I learned:
 
 -Dynamically creating a user defined grid using JavaScript
+
  -Changing CSS grid rows/columns dynamically
- -adding/removing child nodes to DOM
+
+ -Adding/removing child nodes to DOM
 
 -Creating CSS variables (custom properties)
 
@@ -13,5 +15,5 @@ Things I learned:
 
 -How to add event listeners to all elements in a nodeList with a for loop
 
--using 'click' and 'mouseover' actions to make page respond to user
+-Using 'click' and 'mouseover' actions to make page respond to user
 
