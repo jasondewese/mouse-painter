@@ -118,12 +118,23 @@ function paint(nodeList, color)
     for (let i = 0; i < nodeList.length; i++)
     {    
         //give each div a mouseover draw effect
-        nodeList[i].addEventListener('mouseover', function(){
+        nodeList[i].addEventListener('mouseover', function(e){
+            //only draw while shiftKey is pressed
+            if(e.shiftKey)
+            {
+                this.style.backgroundColor = color;
+            }
+                
+        });
+
+        nodeList[i].addEventListener('touchmove', function(){
             this.style.backgroundColor = color;
         });
         
     }
 }
+
+
 
 //Allows the mouse to draw in the grid with each square as 
 //a different random color

@@ -7,7 +7,7 @@ body {
     background-color: #000;
     font-family: sans-serif;
 
-    overflow: hidden;
+    overflow: auto;
 }
 
 #mainContainer {
@@ -17,7 +17,7 @@ body {
     display: grid;
 
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr 1fr 7fr 1fr;
+    grid-template-rows: 1fr 1fr 7fr;
 
     height: 100% vh;
 
@@ -40,8 +40,15 @@ body {
     grid-area: heading;
 }
 
+.instructions {
+    font-size: 1.25em;
+    color: black;
+    text-align: center;
+}
+
 #newGrid {
     display: flex;
+    flex-direction: column;
     background-color: #8B8;
     justify-content: center;
     grid-area: newGrid;
@@ -67,6 +74,7 @@ body {
 }
 
 .optionBtns {
+    background-color: #EEE;
     font-size: large;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -87,6 +95,8 @@ body {
     justify-self: center;
 
     display: grid;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 footer {

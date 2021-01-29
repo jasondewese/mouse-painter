@@ -17,3 +17,6 @@ Things I learned:
 
 -Using 'click' and 'mouseover' actions to make page respond to user
 
+-Using CSS resets or normalize to get more consistent cross browser behavior
+
+-setting title and favicon for webpage
