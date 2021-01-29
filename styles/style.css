@@ -6,8 +6,11 @@ body {
     color: #FFF;
     background-color: #000;
     font-family: sans-serif;
+    
+    height: 95vh;
+    margin: 0;
 
-    overflow: auto;
+    overflow: hidden;
 }
 
 #mainContainer {
@@ -19,16 +22,15 @@ body {
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr 1fr 7fr;
 
-    height: 100% vh;
+    column-gap: 0px;
+    row-gap: 0px;
 
     grid-template-areas: 
     ". heading ."
     ". newGrid ."
     "options gridArea ."
     ". . ."
-    "footer footer footer";
-    
-    
+    "footer footer footer";  
 }
 
 #heading {
@@ -71,6 +73,10 @@ body {
     flex-direction: column;
     align-content: space-around;
     justify-content: space-evenly;
+
+    padding-bottom: 0px;
+    border-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .optionBtns {
@@ -95,13 +101,18 @@ body {
     justify-self: center;
 
     display: grid;
-    padding-top: 0;
-    margin-top: 0;
+    padding-bottom: 0px;
+    border-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 footer {
     background-color: cadetblue;
     text-align: center;
     grid-area: footer;
+
+    position: fixed;
+    bottom: 0;
+    left: 38vw;
 }
 
