@@ -2,15 +2,25 @@
     --grid-size: 500px;
 }
 
+
+html {
+    position: fixed;
+    width: 100vw;
+}
+
 body {
     color: #FFF;
     background-color: #000;
     font-family: sans-serif;
     
     height: 95vh;
+    width: 100vw;
     margin: 0;
 
     overflow: hidden;
+    position: fixed;
+    
+    touch-action: none;
 }
 
 #mainContainer {

@@ -13,6 +13,7 @@ const randomColor = document.querySelector("#randomColor");
 const pickColor = document.querySelector("#pickColor");
 const eraser = document.querySelector("#eraser");
 const rainbow = document.querySelector("#rainbow");
+const clear = document.querySelector("#clear");
 
 //Initialize with a 16x16 grid
 drawGrid(INITIAL_SIZE);
@@ -33,7 +34,7 @@ newGrid.addEventListener("click", function(){
     
 });
 
-//add white paint effect when 'eraser' clicked
+//add white paint effect when 'black' clicked
 blackBtn.addEventListener("click", function(){
     const tempDivs = document.querySelectorAll(".temp");
     paint(tempDivs, "black");
@@ -44,6 +45,13 @@ blackBtn.addEventListener("click", function(){
 eraser.addEventListener("click", function(){
     const tempDivs = document.querySelectorAll(".temp");
     paint(tempDivs, "white");
+    
+});
+
+//Redraws blank grid when 'Erase All' is clicked
+clear.addEventListener("click", function(){
+    const tempDivs = document.querySelectorAll(".temp");
+    drawGrid(Math.sqrt(tempDivs.length));
     
 });
 
@@ -126,8 +134,12 @@ function paint(nodeList, color)
             }
                 
         });
-
+        
         nodeList[i].addEventListener('touchmove', function(){
+            this.style.backgroundColor = color;
+        });
+        
+        nodeList[i].addEventListener('touchstart', function(){
             this.style.backgroundColor = color;
         });
         
