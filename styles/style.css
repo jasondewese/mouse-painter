@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    color: #FFF;
+    
     background-color: #000;
     font-family: sans-serif;
     
@@ -24,7 +24,7 @@ body {
 }
 
 #mainContainer {
-    background-color: #B88;
+    background-color: #DDD;
     
    
     display: grid;
@@ -44,10 +44,14 @@ body {
 }
 
 #heading {
-    background-color: #88B;
+    background-color: #DDE;
+    border-radius:5px;
     font-size: 3em;
     text-align: center;
     text-emphasis: bold;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
 
     grid-area: heading;
 }
@@ -56,12 +60,13 @@ body {
     font-size: 1.25em;
     color: black;
     text-align: center;
+    
 }
 
 #newGrid {
     display: flex;
     flex-direction: column;
-    background-color: #8B8;
+   
     justify-content: center;
     grid-area: newGrid;
 }
@@ -77,16 +82,20 @@ body {
 }
 
 #options {
-    background-color: #BB8;
+    border-style: solid;
+    border-radius: 5px;
+    background-color: #DDE;
     grid-area: options;
     display: flex;
     flex-direction: column;
     align-content: space-around;
     justify-content: space-evenly;
 
-    padding-bottom: 0px;
-    border-bottom: 0px;
-    margin-bottom: 0px;
+    
+    
+    
+    margin-left:3px;
+    margin-bottom:20px;
 }
 
 .optionBtns {
@@ -94,10 +103,16 @@ body {
     font-size: large;
     padding-top: 1em;
     padding-bottom: 1em;
+    margin-right: 5px;
+    margin-left: 5px;
     width: 8em;
     align-self: center;
     border-radius: 5px;
 
+}
+
+.optionBtns:hover {
+    background-color: #CCC;
 }
 
 #gridArea {
@@ -114,10 +129,12 @@ body {
     padding-bottom: 0px;
     border-bottom: 0px;
     margin-bottom: 0px;
+    
+    
 }
 
 footer {
-    background-color: cadetblue;
+    
     text-align: center;
     grid-area: footer;
 
